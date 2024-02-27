@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :phoenix_timeline, PhoenixTimeline.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "1234",
   hostname: "localhost",
   database: "phoenix_timeline_dev",
   stacktrace: true,

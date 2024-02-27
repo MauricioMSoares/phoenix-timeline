@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :phoenix_timeline, PhoenixTimeline.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "1234",
   hostname: "localhost",
   database: "phoenix_timeline_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
