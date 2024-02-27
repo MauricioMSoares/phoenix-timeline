@@ -60,4 +60,14 @@ defmodule PhoenixTimelineWeb.PostLive.Index do
 
     {:noreply, stream_delete(socket, :posts, post)}
   end
+
+  def handle_event("like", _params, socket) do
+    PhoenixTimeline.Timeline.inc_likes(socket.assigns.post)
+    {:noreply, socket}
+  end
+
+  def handle_event("repost", %{"id" => id}, socket) do
+    PhoenixTimeline.Timeline.inc_reposts(id)
+    {:noreply, socket}
+  end
 end

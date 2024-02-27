@@ -14,8 +14,16 @@
 >
   <:col :let={{_id, post}} label="Username"><%= post.username %></:col>
   <:col :let={{_id, post}} label="Body"><%= post.body %></:col>
-  <:col :let={{_id, post}} label="Likes count"><%= post.likes_count %></:col>
-  <:col :let={{_id, post}} label="Reposts count"><%= post.reposts_count %></:col>
+  <:col :let={{_id, post}} label="Likes count">
+    <a href="#" phx-click="like">
+      <%= post.likes_count %>
+    </a>
+  </:col>
+  <:col :let={{_id, post}} label="Reposts count">
+    <a href="#" phx-click="repost" phx-value-id={post.id}>
+      <%= post.reposts_count %>
+    </a>
+  </:col>
   <:action :let={{_id, post}}>
     <div class="sr-only">
       <.link navigate={~p"/posts/#{post}"}>Show</.link>
